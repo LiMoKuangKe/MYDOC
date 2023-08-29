@@ -1,0 +1,38 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: native
+  application:
+    name: eureka-server
+  cloud:
+    config:
+      name: config
+      profile: native
+      server:
+        native:
+          searchLocations:
+            - /config
+#        git:
+#          uri: https://github.com/LiMoKuangKe/MYDOC.git
+#          username: LiMoKuangKe
+#          password: liufang3631
+#          basedir: config/
+#          refresh-rate: 10
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+logging:
+  level:
+    root: info
+    com.example: debug
+  file:
+    name: app/eureka_server.log

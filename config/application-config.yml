@@ -1,0 +1,37 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /config
+spring:
+  application:
+    name: config2
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://eureka-server:8081
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8081/eureka/
+logging:
+  level:
+    root: info
+    com.example: debug
+  file:
+    name: app/config.log
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+      base-path: /
+foo: 0203      

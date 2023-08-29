@@ -34,4 +34,4 @@ management:
       exposure:
         include: hystrix.stream
       base-path: /
-foo: 0203      
+foo: nihaofoo

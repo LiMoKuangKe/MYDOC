@@ -36,3 +36,5 @@ logging:
     com.example: debug
   file:
     name: app/eureka_server.log
+
+foo: fooeureka

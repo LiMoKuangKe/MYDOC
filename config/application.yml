@@ -34,3 +34,4 @@ management:
       exposure:
         include: hystrix.stream
       base-path: /
+foo: foodefault

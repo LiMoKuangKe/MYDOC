@@ -30,4 +30,5 @@ logging:
     com.example: debug
   file:
     name: app/client.log
+
 foo: fooclient

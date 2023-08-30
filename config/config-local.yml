@@ -1,7 +1,12 @@
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://localhost:8081/eureka/
+
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081/monitor
+
 foo: fooconfig-local

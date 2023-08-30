@@ -4,7 +4,7 @@ server:
     context-path: /config
 spring:
   application:
-    name: config2
+    name: config
   cloud:
     config:
       discovery:

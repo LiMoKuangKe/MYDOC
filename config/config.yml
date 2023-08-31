@@ -5,6 +5,11 @@ server:
 spring:
   application:
     name: config
+  boot:
+    admin:
+      client:
+        instance:
+          prefer-ip: true
   cloud:
     config:
       discovery:
@@ -12,6 +17,10 @@ spring:
         service-id: config-server
       name: ${spring.application.name}
       profile: local
+  rabbitmq:
+    addresses: localhost:5672
+    username: rabbit
+    password: rabbit
 #      uri: http://localhost:8086
 eureka:
   instance:

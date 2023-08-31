@@ -9,4 +9,4 @@ spring:
       client:
         url: http://localhost:8081/monitor
 
-foo: fooconfig-local-v1
+foo: fooconfig-local-v2

@@ -1,6 +1,7 @@
 eureka:
   eureka-hostname: localhost
-  eureka-port: 8081
+  eureka-port: 9001
   instance:
     hostname: localhost
-foo: fooconfig-local-v7
+
+foo: fooconfig-docker-v7

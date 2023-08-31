@@ -3,11 +3,14 @@ server:
   servlet:
     context-path: /${spring.application.name}
 spring:
+  profiles:
+    active: docker
   application:
     name: config
   boot:
     admin:
       client:
+        url: http://${eureka.eureka-hostname}:${eureka.eureka-port}/monitor
         instance:
           prefer-ip: true
   cloud:
@@ -17,19 +20,19 @@ spring:
         service-id: config-server
       name: ${spring.application.name}
       profile: local
-  rabbitmq:
-    addresses: localhost:5672
-    username: rabbit
-    password: rabbit
+  zipkin:
+    base-url: http://localhost:8087
 #      uri: http://localhost:8086
 eureka:
+  eureka-hostname: eureka-server
+  eureka-port: 8081
   instance:
     prefer-ip-address: true
     ip-address: ${spring.cloud.client.ip-address}
     instance-id: ${eureka.instance.ip-address}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://eureka-server:8081/eureka/
+      defaultZone: http://${eureka.eureka-hostname}:${eureka.eureka-port}/eureka/
 
 feign:
   hystrix:

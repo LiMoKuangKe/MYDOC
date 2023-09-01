@@ -11,4 +11,4 @@ spring:
   zipkin:
     base-url: http://${eureka.eureka-hostname}:${eureka.zipkin-port}
 
-foo: fooconfig-docker-v10
+foo: fooconfig-docker-v11

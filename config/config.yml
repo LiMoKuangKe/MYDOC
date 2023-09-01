@@ -3,14 +3,13 @@ server:
   servlet:
     context-path: /${spring.application.name}
 spring:
-  profiles:
-    active: docker
   application:
     name: config
   boot:
     admin:
       client:
         url: http://${eureka.eureka-hostname}:${eureka.eureka-port}/monitor
+        auto-deregistration: true
         instance:
           prefer-ip: true
   cloud:
@@ -19,10 +18,9 @@ spring:
         enabled: true
         service-id: config-server
       name: ${spring.application.name}
-      profile: local
+      profile: ${spring.profiles.active}
   zipkin:
-    base-url: http://localhost:8087
-#      uri: http://localhost:8086
+    base-url: http://zipkin-server:8087
 eureka:
   eureka-hostname: eureka-server
   eureka-port: 8081
@@ -60,6 +58,7 @@ logging:
   level:
     root: info
     com.example: debug
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: warn
   file:
     name: app/${spring.application.name}.log
 

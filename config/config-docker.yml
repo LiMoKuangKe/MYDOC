@@ -1,7 +1,14 @@
 eureka:
   eureka-hostname: localhost
   eureka-port: 9001
-  instance:
-    hostname: localhost
+  zipkin-port: 9007
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: false
+      uri: http://localhost:9006
+  zipkin:
+    base-url: http://${eureka.eureka-hostname}:${eureka.zipkin-port}
 
-foo: fooconfig-docker-v7
+foo: fooconfig-docker-v8

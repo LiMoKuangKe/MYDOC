@@ -2,12 +2,13 @@ eureka:
   eureka-hostname: localhost
   eureka-port: 9001
   zipkin-port: 9007
+  config-port: 8086
 spring:
   cloud:
     config:
       discovery:
         enabled: false
-      uri: http://localhost:9006
+      uri: http://localhost:${eureka.config-port}
   zipkin:
     base-url: http://${eureka.eureka-hostname}:${eureka.zipkin-port}
 

@@ -7,8 +7,9 @@ spring:
   cloud:
     config:
       discovery:
-        enabled: false
-      uri: http://localhost:${eureka.config-port}
+        enabled: true
+        service-id: config-server
+  #      uri: http://localhost:${eureka.config-port}
   zipkin:
     base-url: http://${eureka.eureka-hostname}:${eureka.zipkin-port}
 foo: fooconfig-local-v11

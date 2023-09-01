@@ -1,6 +1,6 @@
 eureka:
   eureka-hostname: localhost
-  eureka-port: 9001
+  eureka-port: 8081
   zipkin-port: 8087
   config-port: 8086
 spring:

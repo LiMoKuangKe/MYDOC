@@ -11,4 +11,4 @@ spring:
       uri: http://localhost:${eureka.config-port}
   zipkin:
     base-url: http://${eureka.eureka-hostname}:${eureka.zipkin-port}
-foo: fooconfig-local-v10
+foo: fooconfig-local-v11

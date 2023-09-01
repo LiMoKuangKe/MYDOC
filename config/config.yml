@@ -18,7 +18,7 @@ spring:
         enabled: true
         service-id: config-server
       name: ${spring.application.name}
-      profile: ${spring.profiles.active}
+      profile: local
   zipkin:
     base-url: http://zipkin-server:8087
 eureka:
